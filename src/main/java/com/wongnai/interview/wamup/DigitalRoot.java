@@ -23,28 +23,20 @@ public class DigitalRoot {
 		// All test case in DigitalRootTest must be passed.
 		// Scanner scan = new Scanner(System.in);
 		long sum = 0;
-		long temp = 0;
-		long remainder = 0;
-		if (number < 0) throw new InputMismatchException();
-		try {
-			while (number > 0) {
-				remainder = number % 10;
-				sum += remainder;
-				number = number / 10;
-				if (sum > 9) {
-					temp = sum;
+
+		
+		if(number>0){
+			while (number > 0 || sum > 9) {
+				if (number == 0) {
+					number = sum;
 					sum = 0;
-					while (temp > 0) {
-						sum += temp % 10;
-						temp = temp / 10;
-					}
 				}
+				sum += number%10;
+				number = number / 10;
+				
 			}
 			return sum;
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
 		}
-		return null;
+		else throw new InputMismatchException("The number must be positive");
 	}
 }
