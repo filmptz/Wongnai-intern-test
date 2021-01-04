@@ -23,7 +23,7 @@ public class SimpleMovieSearchService implements MovieSearchService {
 		// All test in SimpleMovieSearchServiceIntegrationTest must pass.
 		// Please do not change @Component annotation on this class
 		List<MovieData> movie_data = movieDataService.fetchAll();
-		
+
 		return movie_data.stream().filter(result -> {
 			List<String> title = Arrays.asList(result.getTitle().toLowerCase().split(" "));
 			return title.contains(queryText.toLowerCase());
