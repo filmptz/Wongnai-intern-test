@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.wongnai.interview.wamup.DigitalRootTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in com.wongnai.interview.wamup.DigitalRootTest
+testDigitalRoot(com.wongnai.interview.wamup.DigitalRootTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <9L>
+     but: was null
+	at com.wongnai.interview.wamup.DigitalRootTest.testDigitalRoot(DigitalRootTest.java:26)
+
+testInvalidInput(com.wongnai.interview.wamup.DigitalRootTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.util.InputMismatchException
+
