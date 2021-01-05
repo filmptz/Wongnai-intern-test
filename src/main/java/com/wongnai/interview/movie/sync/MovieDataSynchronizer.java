@@ -23,14 +23,14 @@ public class MovieDataSynchronizer {
 	@Transactional
 	public void forceSync() {
 		//TODO: implement this to sync movie into repository
+		movieRepository.deleteAll();
 		List<MovieData> movie_data = movieDataService.fetchAll();
 
-		System.out.println(movie_data.get(0).getTitle());
 		movie_data.stream()
 			.map(result -> {
-				Movie movie = new Movie(result.getTitle());
-				movie.getActors().addAll(result.getCast());
-				return movie; 
+				Movie m = new Movie(result.getTitle());
+				m.getActors().addAll(result.getCast());
+				return m;
 			})
 			.forEach(movie -> movieRepository.save(movie));
 	}
